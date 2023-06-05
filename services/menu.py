@@ -65,6 +65,8 @@ while number != '0':
         data = ""
     elif number == '0':
         print('\n [+] Good Bye ' + platform.uname()[1] + ' !\n')
+        command = ['sudo', 'service', 'NetworkManager', 'start']
+        subprocess.run(command)
         quit()
     else:
         print("\n [X] Error !\n [!] Select this number: 1, 2 or 0\n")

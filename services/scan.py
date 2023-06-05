@@ -26,10 +26,20 @@ if is_wifi_connected():
     run_command('lsusb -vs 001:002')
     print("\nInformations du dongle WiFi :")
     run_command('ethtool -i wlan0')  # Remplacez 'wlan0' par l'interface WiFi correspondante
-    print("\nInformations du module du dongle WiFi :")
-    run_command('modinfo rtl8814au')
+
+    # Désactiver la carte WiFi
+    run_command('sudo ip link set wlan0 down')
+
+    # Activer le mode monitor
+    run_command('sudo iwconfig wlan0 mode monitor')
+
+    # Réactiver la carte WiFi
+    run_command('sudo ip link set wlan0 up')
+
+    print("\nInformations de la carte WiFi :")
+    run_command('iwconfig wlan0')
 else:
     print("Le dongle WiFi n'est pas connecté.")
 
 print()
-input("Press Enter to continue...")
+input("Appuyez sur Entrée pour continuer...")
