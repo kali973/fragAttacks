@@ -14,7 +14,7 @@ def b():
 
 
 def d():
-    os.system("xterm -e \"sudo python pysetup.py\"")
+    os.system('xterm -geometry 80x24-0+0 -e "sudo python pysetup.py"')
 
 
 def c():

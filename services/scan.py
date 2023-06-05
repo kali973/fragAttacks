@@ -30,3 +30,6 @@ if is_wifi_connected():
     run_command('modinfo rtl8814au')
 else:
     print("Le dongle WiFi n'est pas connecté.")
+
+print()
+input("Press Enter to continue...")
