@@ -3,6 +3,14 @@
 #
 # This code may be distributed under the terms of the BSD license.
 # See README for more details.
+from impacket.ImpactPacket import ARP, UDP, IP, ICMP
+from impacket.dot11 import LLC, SNAP
+from impacket.eap import EAPOL, EAP
+from marshmallow.fields import IPv6
+from scapy.layers.dhcp import BOOTP, DHCP
+from scapy.layers.inet6 import ICMPv6ND_RA, ICMPv6NDOptSrcLLAddr, ICMPv6NDOptPrefixInfo, ICMPv6NDOptMTU, \
+	ICMPv6NDOptRDNSS
+from scapy.layers.l2 import Ether
 
 from libwifi import *
 import abc, sys, socket, struct, time, subprocess, atexit, select, copy
@@ -10,6 +18,8 @@ import os.path
 from wpaspy import Ctrl
 from scapy.contrib.wpa_eapol import WPA_key
 from scapy.arch.common import get_if_raw_hwaddr
+from scapy.layers.dot11 import Dot11Encrypted
+
 
 FRAGVERSION = "1.3"
 
@@ -460,7 +470,7 @@ class Station():
 
 		if len(key) == 32:
 			# TODO: Implement and test this function
-			encrypted = encrypt_tkip(frame, key, self.pn[idx], keyid)
+			encrypted = Dot11Encrypted(frame, key, self.pn[idx], keyid)
 		elif len(key) == 16:
 			encrypted = encrypt_ccmp(frame, key, self.pn[idx], keyid, self.options.amsdu_spp)
 		else:

@@ -7,6 +7,8 @@ from Crypto.Cipher import AES
 from datetime import datetime
 import binascii
 
+from scapy.layers.dhcp import DHCP_am
+
 #### Constants ####
 
 FRAME_TYPE_MANAGEMENT = 0
