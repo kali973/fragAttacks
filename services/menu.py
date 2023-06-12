@@ -36,6 +36,16 @@ logging.disable(sys.maxsize)
 number = 1
 data = ""
 os.system("sudo apt-get install -y xterm")
+# os.system("sudo pip install marshmallow -y xterm")
+# os.system("sudo pip install impacket -y xterm")
+# os.system("sudo pip install dhcpkit -y xterm")
+# os.system("sudo pip install pythran -y xterm")
+# os.system("sudo pip install --upgrade pandas -y xterm")
+# os.system("sudo apt-get install python3-dev gfortran libblas-dev liblapack-dev")
+# os.system("pip install --upgrade scipy")
+# os.system("sudo pip install numpy==1.15.4 pandas==0.24.1 research -y xterm")
+# os.system("sudo source research-env/bin/activate")
+
 os.environ['TERM'] = 'xterm'
 path = os.getcwd()
 

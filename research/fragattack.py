@@ -8,7 +8,6 @@
 import glob, importlib, argparse
 
 from impacket.dot11 import LLC, SNAP
-
 from fraginternals import *
 from research.tests_attacks import AmsduInject
 from research.tests_common import PingTest, ForwardTest, EapolAmsduTest, LinuxTest

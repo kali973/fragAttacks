@@ -2,6 +2,7 @@
 #
 # This code may be distributed under the terms of the BSD license.
 # See README for more details.
+from scapy.layers.inet import TCP
 
 from fraginternals import *
 
