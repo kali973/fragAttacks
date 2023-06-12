@@ -2,12 +2,18 @@
 #
 # This code may be distributed under the terms of the BSD license.
 # See README for more details.
+from telnetlib import IP
+
+from impacket.dot11 import Dot11, RadioTap, Dot11WEP
 from scapy.all import *
 from Crypto.Cipher import AES
 from datetime import datetime
 import binascii
 
-from scapy.layers.dhcp import DHCP_am
+from scapy.arch import L2Socket, attach_filter
+from scapy.layers.dhcp import DHCP_am, BOOTP
+from scapy.layers.dot11 import Dot11QoS, Dot11Elt
+from scapy.layers.l2 import Ether, ARP_am
 
 #### Constants ####
 

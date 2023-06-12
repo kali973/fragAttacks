@@ -17,7 +17,7 @@ import abc, sys, socket, struct, time, subprocess, atexit, select, copy
 import os.path
 from wpaspy import Ctrl
 from scapy.contrib.wpa_eapol import WPA_key
-from scapy.arch.common import get_if_raw_hwaddr
+from scapy.arch import get_if_raw_hwaddr
 from scapy.layers.dot11 import Dot11Encrypted
 
 
