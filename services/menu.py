@@ -20,7 +20,7 @@ def d():
 def m():
     os.system('xterm -e "sudo python configuration.py"')
 def o():
-    os.system('xterm -geometry 120x40 -e "sudo python retrieveMac.py"')
+    os.system('xterm -geometry 120x30 -e "sudo python retrieveMac.py"')
 def b():
     os.system('xterm -geometry 100x30+0+0 -e "sudo python balayage.py"')
 
