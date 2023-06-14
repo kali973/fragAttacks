@@ -20,7 +20,7 @@ def d():
 def m():
     os.system('xterm -e "sudo python configuration.py"')
 def o():
-    os.system('xterm -geometry 120x30 -e "sudo python retrieveMac.py"')
+    os.system('xterm -geometry 120x30-0+0 -e "sudo python retrieveMac.py"')
 def b():
     os.system('xterm -geometry 100x30+0+0 -e "sudo python balayage.py"')
 
@@ -63,7 +63,7 @@ while number != '0':
     data += ' Select option:\n'
     data += ' [1] Configuration environment\n'
     data += ' [2] Scan network (Crtl-C to stop scan)\n'
-    data += ' [3] Retrieve MAC address by BSSID\n'
+    data += ' [3] Select target by BSSID\n'
     data += ' [0] Exit\n'
     print(data)
     number = input(" Number~# ")
@@ -83,7 +83,7 @@ while number != '0':
         clear()
         data = ""
     elif number == '3':
-        print("\n Retrieve MAC address by BSSID ...\n")
+        print("\n Select target by BSSID ...\n")
         threading.Thread(target=o).start()
         clear()
         data = ""
