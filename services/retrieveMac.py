@@ -1,9 +1,7 @@
-import csv
 import os
+import csv
 import tkinter as tk
-
 from tinydb import TinyDB
-
 
 def afficher_selection():
     # Création d'une nouvelle fenêtre pour afficher la sélection
@@ -38,7 +36,6 @@ def afficher_selection():
 
     # Démarrage de la boucle principale de la fenêtre de sélection
     selection_window.mainloop()
-
 
 # Vérification de l'existence du fichier "database.json"
 db_file = 'database.json'

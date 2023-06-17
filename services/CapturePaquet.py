@@ -4,36 +4,28 @@ import subprocess
 import time
 from multiprocessing import Process
 
-
 def lancer_wireshark_capture():
     command_wireshark = ['wireshark', '4way-01.cap']
     subprocess.Popen(command_wireshark)
 
-
 def lancer_airodump_ng(channel, bssid):
     directory = os.getcwd()
-    file_path = os.path.join(directory, '4way-01.cap')
+    file_path = os.path.join(directory, '4way')
     command_airodump = ['airodump-ng', 'wlan0', '-w', file_path, '-c', channel, '--bssid', bssid]
     subprocess.call(command_airodump)
-
 
 def lancer_aireplay_ng(bssid):
     command_aireplay = ['x-terminal-emulator', '-e', 'aireplay-ng', '-deauth', '0', '-a', bssid, 'wlan0']
     subprocess.call(command_aireplay)
 
-
 # Chemin du fichier selection.json
 selection_file = 'selection.json'
 
-
 def verifier_fichier_capture():
-    file_list = ['4way-01.csv', '4way-01.kismet.csv',
-                 '4way-01.kismet.netxml',
-                 '4way-01.log.csv']
+    file_list = ['4way-01.csv', '4way-01.kismet.csv', '4way-01.kismet.netxml', '4way-01.log.csv']
     for file_name in file_list:
         if os.path.exists(file_name):
             os.remove(file_name)
-
 
 def verifier_fichier_capture_all():
     prefix = "4way-"
@@ -41,7 +33,6 @@ def verifier_fichier_capture_all():
     for file_name in file_list:
         if file_name.startswith(prefix):
             os.remove(file_name)
-
 
 verifier_fichier_capture_all()
 
