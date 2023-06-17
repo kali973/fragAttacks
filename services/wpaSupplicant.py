@@ -17,7 +17,7 @@ for root, dirs, files in os.walk(parent_directory):
         build_sh_path = os.path.join(research_dir, 'client.conf')
         if os.path.isfile(build_sh_path):
             os.chdir(research_dir)
-            command = "wpa_supplicant -D nl80211 -i wlan1 -c client.conf -dd -K"
+            command = "wpa_supplicant -D nl80211 -i wlan4 -c client.conf -dd -K"
             subprocess.run(command, shell=True, check=True)
             break
 

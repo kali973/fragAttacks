@@ -121,6 +121,7 @@ while number != '0':
         data = ""
     elif number == '6':
         print("\n Starting hostapd and wpa_supplicant ...\n")
+        os.system('modprobe mac80211_hwsim radios=4')
         threading.Thread(target=h).start()
         s = threading.Timer(10, i)
         s.start()
