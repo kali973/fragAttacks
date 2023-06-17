@@ -55,7 +55,7 @@ def clear():
 logging.disable(sys.maxsize)
 number = 1
 data = ""
-os.system("sudo apt-get install python3.11-venv")
+os.system("sudo apt-get install -y python3.11-venv")
 os.system("sudo apt-get install -y xterm")
 
 # Installation de tinydb sans afficher les avertissements
