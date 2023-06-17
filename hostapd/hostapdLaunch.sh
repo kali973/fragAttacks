@@ -1,9 +1,19 @@
 #!/bin/bash
 
-# Installation de hostapd
-apt install hostapd
+# Se déplacer dans le répertoire fragAttacks
+cd /root/PycharmProjects/fragAttacks/hostapd/ || exit 1
 
-# Lancement de hostapd en mode débogage
-hostapd -dd -K "$hostapd_directory/hostapd.conf"
+# Recherche du fichier hostapd.conf
+hostapd_file=$(find . -name "hostapd.conf" 2>/dev/null)
+
+if [ -z "$hostapd_file" ]; then
+  echo "Le fichier hostapd.conf n'a pas été trouvé."
+  exit 1
+fi
+
+# Lancement de la commande hostapd
+hostapd -dd -K "$hostapd_file"
+
+
 
 read -p "Appuyez sur Entrée pour continuer..."

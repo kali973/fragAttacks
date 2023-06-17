@@ -14,10 +14,12 @@ for _ in range(n):
 for root, dirs, files in os.walk(parent_directory):
     if 'wpa_supplicant' in dirs:
         research_dir = os.path.join(root, 'wpa_supplicant')
-        build_sh_path = os.path.join(research_dir, 'wpaSupplcantLaunch.sh')
+        build_sh_path = os.path.join(research_dir, 'client.conf')
         if os.path.isfile(build_sh_path):
             os.chdir(research_dir)
-            os.system('chmod +x wpaSupplcantLaunch.sh')  # Changer les permissions pour le rendre exécutable
-            subprocess.run(['bash', 'wpaSupplcantLaunch.sh'], cwd=research_dir, check=True, stderr=subprocess.DEVNULL)
-            break  # Sortir de la boucle après avoir exécuté wpaSupplcantLaunch.sh
+            command = "wpa_supplicant -D nl80211 -i wlan1 -c client.conf -dd -K"
+            subprocess.run(command, shell=True, check=True)
+            break
 
+print()
+input("Appuyez sur Entrée pour continuer...")
