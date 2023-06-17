@@ -1,7 +1,6 @@
 import logging
 import os
 import platform
-import subprocess
 import sys
 import threading
 
@@ -14,18 +13,38 @@ def e():
     os.system('xterm -geometry 80x24+0+0 -e "sudo python build.py"')
 
 
+def w():
+    os.system('xterm -geometry 80x24+0+0 -e "sudo python AttaqueBruteForce.py"')
+
+
+def l():
+    os.system('xterm -geometry 80x24+0+0 -e "sudo python 4WayHandshake.py"')
+
+
 def d():
     os.system('xterm -geometry 80x24-0+0 -e "sudo python pysetup.py"')
 
+
 def m():
     os.system('xterm -e "sudo python configuration.py"')
+
+
 def o():
     os.system('xterm -geometry 120x30-0+0 -e "sudo python retrieveMac.py"')
+
+
 def b():
     os.system('xterm -geometry 100x30+0+0 -e "sudo python balayage.py"')
 
+
+def k():
+    os.system('xterm -geometry 100x30+0+0 -e "sudo python CapturePaquet.py"')
+
+
 def x():
     os.system('xterm -e "sudo python close.py"')
+
+
 def clear():
     linux = 'clear'
     windows = 'cls'
@@ -35,16 +54,8 @@ def clear():
 logging.disable(sys.maxsize)
 number = 1
 data = ""
+os.system("apt install python3.11-venv")
 os.system("sudo apt-get install -y xterm")
-# os.system("sudo pip install marshmallow -y xterm")
-# os.system("sudo pip install impacket -y xterm")
-# os.system("sudo pip install dhcpkit -y xterm")
-# os.system("sudo pip install pythran -y xterm")
-# os.system("sudo pip install --upgrade pandas -y xterm")
-# os.system("sudo apt-get install python3-dev gfortran libblas-dev liblapack-dev")
-# os.system("pip install --upgrade scipy")
-# os.system("sudo pip install numpy==1.15.4 pandas==0.24.1 research -y xterm")
-# os.system("sudo source research-env/bin/activate")
 
 os.environ['TERM'] = 'xterm'
 path = os.getcwd()
@@ -64,6 +75,8 @@ while number != '0':
     data += ' [1] Configuration environment\n'
     data += ' [2] Scan network (Crtl-C to stop scan)\n'
     data += ' [3] Select target by BSSID\n'
+    data += ' [4] Capture des paquets du BSSID\n'
+    data += ' [5] Attaque Brute force\n'
     data += ' [0] Exit\n'
     print(data)
     number = input(" Number~# ")
@@ -85,6 +98,16 @@ while number != '0':
     elif number == '3':
         print("\n Select target by BSSID ...\n")
         threading.Thread(target=o).start()
+        clear()
+        data = ""
+    elif number == '4':
+        print("\n Capture des paquets du BSSID ...\n")
+        threading.Thread(target=k).start()
+        clear()
+        data = ""
+    elif number == '5':
+        print("\n Attaque brute force ...\n")
+        threading.Thread(target=w).start()
         clear()
         data = ""
     elif number == '0':

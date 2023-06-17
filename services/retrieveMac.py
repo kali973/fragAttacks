@@ -1,8 +1,9 @@
 import csv
 import os
-import subprocess
 import tkinter as tk
+
 from tinydb import TinyDB
+
 
 def afficher_selection():
     # Création d'une nouvelle fenêtre pour afficher la sélection
@@ -19,11 +20,17 @@ def afficher_selection():
     selection_data = selection_table.all()
 
     # Affichage de la sélection dans un widget Label formaté
-    header_label = tk.Label(selection_window, text="Num. Seq.    BSSID                NetType    ESSID                          Channel  Encryption")
+    header_label = tk.Label(selection_window,
+                            text="Num. Seq.    BSSID                NetType    ESSID                          Channel  Encryption")
     header_label.pack()
 
     for i, item in enumerate(selection_data, start=1):
-        item_label = tk.Label(selection_window, text="{:<12d} {:<20s} {:<10s} {:<30s} {:<8s} {:<12s}".format(i, item['BSSID'], item['NetType'], item['ESSID'], item['Channel'], item['Encryption']))
+        item_label = tk.Label(selection_window,
+                              text="{:<12d} {:<20s} {:<10s} {:<30s} {:<8s} {:<12s}".format(i, item['BSSID'],
+                                                                                           item['NetType'],
+                                                                                           item['ESSID'],
+                                                                                           item['Channel'],
+                                                                                           item['Encryption']))
         item_label.pack()
 
     # Fermeture de la base de données de sélection
@@ -45,12 +52,13 @@ with open('out-01.csv-01.kismet.csv', 'r') as file:
     reader = csv.DictReader(file, delimiter=';')
     data = list(reader)
 
-
 # Affichage des données en colonnes
-print("{:<12s} {:<20s} {:<10s} {:<30s} {:<8s} {:<12s}".format("Num. Seq.", "BSSID", "NetType", "ESSID", "Channel", "Encryption"))
+print("{:<12s} {:<20s} {:<10s} {:<30s} {:<8s} {:<12s}".format("Num. Seq.", "BSSID", "NetType", "ESSID", "Channel",
+                                                              "Encryption"))
 print(" ")
 for i, item in enumerate(data, start=1):
-    print("{:<12d} {:<20s} {:<10s} {:<30s} {:<8s} {:<12s}".format(i, item['BSSID'], item['NetType'], item['ESSID'], item['Channel'], item['Encryption']))
+    print("{:<12d} {:<20s} {:<10s} {:<30s} {:<8s} {:<12s}".format(i, item['BSSID'], item['NetType'], item['ESSID'],
+                                                                  item['Channel'], item['Encryption']))
 
 print(" ")
 # Demande de saisie du numéro de séquence

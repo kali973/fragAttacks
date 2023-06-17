@@ -1,13 +1,15 @@
-import subprocess
 import glob
 import os
+import subprocess
+
 
 def run_command(command, option, comment):
     try:
         out_filename = "out-01.csv"  # Nom de fichier constant avec le suffixe "-01"
         command_with_filename = f"{command} {option} --write {out_filename}"
         print("\033[1;36m{}\033[0m".format(comment))  # Affichage du commentaire en caractères gras et bleu ciel
-        print("\033[1;31m$ {}\033[0m".format(command_with_filename))  # Affichage de la commande en caractères gras et rouges
+        print("\033[1;31m$ {}\033[0m".format(
+            command_with_filename))  # Affichage de la commande en caractères gras et rouges
         subprocess.run(command_with_filename, shell=True, check=True)
     except subprocess.CalledProcessError as e:
         print(f"Erreur lors de l'exécution de la commande : {e}")
