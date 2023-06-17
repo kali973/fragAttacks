@@ -1,6 +1,7 @@
 import logging
 import os
 import platform
+import subprocess
 import sys
 import threading
 
@@ -54,14 +55,16 @@ def clear():
 logging.disable(sys.maxsize)
 number = 1
 data = ""
-os.system("apt install python3.11-venv")
+os.system("sudo apt-get install python3.11-venv")
 os.system("sudo apt-get install -y xterm")
+
+# Installation de tinydb sans afficher les avertissements
+subprocess.run(['sudo', 'pip', 'install', 'tinydb'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 os.environ['TERM'] = 'xterm'
 path = os.getcwd()
 
 while number != '0':
-
     data += ' ----------------------------\n'
     if os.name == "nt":
         print(' [!] Please run the script on Linux Machine !')

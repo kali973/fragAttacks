@@ -1,8 +1,8 @@
 import json
 import os
 import subprocess
-from multiprocessing import Process
 import time
+from multiprocessing import Process
 
 
 def lancer_wireshark_capture():
