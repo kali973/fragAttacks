@@ -45,6 +45,11 @@ def k():
 def x():
     os.system('xterm -e "sudo python close.py"')
 
+def h():
+    os.system('xterm -e "sudo python hostapd.py"')
+
+def i():
+    os.system('xterm -e "sudo python wpaSupplicant.py"')
 
 def clear():
     linux = 'clear'
@@ -80,6 +85,7 @@ while number != '0':
     data += ' [3] Select target by BSSID\n'
     data += ' [4] Capture des paquets du BSSID\n'
     data += ' [5] Attaque Brute force\n'
+    data += ' [6] Starting hostapd and wpa_supplicant\n'
     data += ' [0] Exit\n'
     print(data)
     number = input(" Number~# ")
@@ -111,6 +117,13 @@ while number != '0':
     elif number == '5':
         print("\n Attaque brute force ...\n")
         threading.Thread(target=w).start()
+        clear()
+        data = ""
+    elif number == '6':
+        print("\n Starting hostapd and wpa_supplicant ...\n")
+        threading.Thread(target=h).start()
+        s = threading.Timer(10, i)
+        s.start()
         clear()
         data = ""
     elif number == '0':
