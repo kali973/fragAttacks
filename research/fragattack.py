@@ -14,6 +14,7 @@ from research.tests_common import PingTest, ForwardTest, EapolAmsduTest, LinuxTe
 from research.tests_experimental import PingBefore
 from research.tests_old import BcastEapFragTest
 from research.tests_qca import QcaDriverRekey, QcaTestSplit, QcaDriverTest
+from research.venv.bin import scapy
 
 
 # ----------------------------------- Main Function -----------------------------------
