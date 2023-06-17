@@ -36,8 +36,8 @@ def o():
 
 def b():
     os.system('xterm -geometry 100x30+0+0 -e "sudo python balayage.py"')
-
-
+def v():
+    os.system('modprobe mac80211_hwsim radios=4')
 def k():
     os.system('xterm -geometry 100x30+0+0 -e "sudo python CapturePaquet.py"')
 
@@ -85,7 +85,8 @@ while number != '0':
     data += ' [3] Select target by BSSID\n'
     data += ' [4] Capture des paquets du BSSID\n'
     data += ' [5] Attaque Brute force\n'
-    data += ' [6] Starting hostapd and wpa_supplicant\n'
+    data += ' [6] Create 4 virtual interface Wifi\n'
+    data += ' [7] Starting hostapd and wpa_supplicant\n'
     data += ' [0] Exit\n'
     print(data)
     number = input(" Number~# ")
@@ -120,8 +121,12 @@ while number != '0':
         clear()
         data = ""
     elif number == '6':
+        print("\n Create 4 virtual interface Wifi  ...\n")
+        threading.Thread(target=v).start()
+        clear()
+        data = ""
+    elif number == '7':
         print("\n Starting hostapd and wpa_supplicant ...\n")
-        os.system('modprobe mac80211_hwsim radios=4')
         threading.Thread(target=h).start()
         s = threading.Timer(10, i)
         s.start()
