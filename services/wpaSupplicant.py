@@ -22,4 +22,11 @@ for root, dirs, files in os.walk(parent_directory):
             break
 
 print()
+
+# Ajouter les commandes supplémentaires
+os.system("ifconfig wlan4 down")
+os.system("iw dev wlan4 set type managed")
+os.system("ifconfig wlan4 up")
+os.system("iw dev wlan4 set channel 6")
+
 input("Appuyez sur Entrée pour continuer...")
