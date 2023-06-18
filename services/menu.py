@@ -86,7 +86,7 @@ while number != '0':
     data += ' [4] Capture des paquets du BSSID\n'
     data += ' [5] Attaque Brute force\n'
     data += ' [6] Create 4 virtual interface Wifi\n'
-    data += ' [7] Starting hostapd and wpa_supplicant\n'
+    data += ' [7] Starting hostapd (Virtual AP on wlan4) and wpa_supplicant (Client connection on wlan4)\n'
     data += ' [8] Test de vulnerability\n'
     data += ' [0] Exit\n'
     print(data)
@@ -128,7 +128,7 @@ while number != '0':
         clear()
         data = ""
     elif number == '7':
-        print("\n Starting hostapd and wpa_supplicant ...\n")
+        print("\n Starting hostapd (Virtual AP on wlan4) and wpa_supplicant (Client connection on wlan4) ...\n")
         threading.Thread(target=h).start()
         s = threading.Timer(10, i)
         s.start()
