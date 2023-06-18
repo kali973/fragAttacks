@@ -130,7 +130,7 @@ while number != '0':
     elif number == '7':
         print("\n Starting hostapd (Virtual AP on wlan4) and wpa_supplicant (Client connection on wlan4) ...\n")
         threading.Thread(target=h).start()
-        s = threading.Timer(10, i)
+        s = threading.Timer(30, i)
         s.start()
         clear()
         data = ""
