@@ -2,8 +2,11 @@
 #
 # This code may be distributed under the terms of the BSD license.
 # See README for more details.
-
+from impacket.dot11 import LLC, SNAP
+from impacket.eap import EAPOL, EAP
 from scapy.all import *
+from scapy.layers.dot11 import Dot11ProbeReq, Dot11ProbeResp
+
 from .wifi import *
 import select
 

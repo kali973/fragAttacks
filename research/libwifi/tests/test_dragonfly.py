@@ -1,3 +1,6 @@
+import binascii
+
+from dns.dnssec import ECC
 from libwifi import *
 
 def test_crypto():

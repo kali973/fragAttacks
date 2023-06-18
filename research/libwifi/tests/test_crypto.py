@@ -1,4 +1,8 @@
+from impacket.dot11 import Dot11
 from libwifi.crypto import *
+
+from research.libwifi import Dot11CCMP, Raw, encrypt_ccmp
+
 
 def get_ciphertext_mic(encrypted):
 	dot11ccmp = encrypted[Dot11CCMP].payload

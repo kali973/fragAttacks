@@ -1,3 +1,5 @@
+import binascii
+
 from libwifi.mschap import *
 
 def test_mschap():
