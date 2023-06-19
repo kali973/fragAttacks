@@ -40,7 +40,8 @@ def v():
     os.system('xterm -e "sudo python modprobe.py"')
 def k():
     os.system('xterm -geometry 100x30+0+0 -e "sudo python CapturePaquet.py"')
-
+def q():
+    os.system('xterm -geometry 100x30+0+0 -e "sudo python 4WayHanddshake.py"')
 
 def x():
     os.system('xterm -e "sudo python close.py"')
