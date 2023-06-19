@@ -84,10 +84,11 @@ while number != '0':
     data += ' [2] Scan network (Crtl-C to stop scan)\n'
     data += ' [3] Select target by BSSID\n'
     data += ' [4] Capture des paquets du BSSID\n'
-    data += ' [5] Attaque Brute force\n'
-    data += ' [6] Create 4 virtual interface Wifi\n'
-    data += ' [7] Starting hostapd (Virtual AP on wlan4) and wpa_supplicant (Client connection on wlan4)\n'
-    data += ' [8] Test de vulnerability\n'
+    data += ' [5] 4 Way handshake\n'
+    data += ' [6] Attaque Brute force\n'
+    data += ' [7] Create 4 virtual interface Wifi\n'
+    data += ' [8] Starting hostapd (Virtual AP on wlan4) and wpa_supplicant (Client connection on wlan4)\n'
+    data += ' [9] Test de vulnerability\n'
     data += ' [0] Exit\n'
     print(data)
     number = input(" Number~# ")
@@ -117,24 +118,29 @@ while number != '0':
         clear()
         data = ""
     elif number == '5':
+        print("\n 4 Way handshake ...\n")
+        threading.Thread(target=q).start()
+        clear()
+        data = ""
+    elif number == '6':
         print("\n Attaque brute force ...\n")
         threading.Thread(target=w).start()
         clear()
         data = ""
-    elif number == '6':
+    elif number == '7':
         print("\n Create 4 virtual interface Wifi  ...\n")
         s = threading.Timer(5, v)
         s.start()
         clear()
         data = ""
-    elif number == '7':
+    elif number == '8':
         print("\n Starting hostapd (Virtual AP on wlan4) and wpa_supplicant (Client connection on wlan4) ...\n")
         threading.Thread(target=h).start()
         s = threading.Timer(30, i)
         s.start()
         clear()
         data = ""
-    elif number == '8':
+    elif number == '9':
         print("\n Test de vulnerability ...\n")
         # threading.Thread(target=s).start()
         # s = threading.Timer(10, i)

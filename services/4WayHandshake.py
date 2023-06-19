@@ -55,19 +55,19 @@ bssid = selection_data['_default']['1']['BSSID']
 channel = selection_data['_default']['1']['Channel']
 
 # Lancement des commandes en parallèle
-process_airodump = Process(target=lancer_airodump_ng, args=(channel, bssid))
-# process_aireplay = Process(target=lancer_aireplay_ng, args=(bssid,))
-# process_wireshark = Process(target=lancer_wireshark_capture)
+# process_airodump = Process(target=lancer_airodump_ng, args=(channel, bssid))
+process_aireplay = Process(target=lancer_aireplay_ng, args=(bssid,))
+process_wireshark = Process(target=lancer_wireshark_capture)
 verifier_fichier_capture()
 
 # Démarrage des processus
-process_airodump.start()
+# process_airodump.start()
 # time.sleep(10)
-# process_aireplay.start()
-# time.sleep(90)
-# process_wireshark.start()
+process_aireplay.start()
+time.sleep(30)
+process_wireshark.start()
 
 # Attendre que les processus se terminent
-process_airodump.join()
-# process_aireplay.join()
-# process_wireshark.join()
+# process_airodump.join()
+process_aireplay.join()
+process_wireshark.join()
