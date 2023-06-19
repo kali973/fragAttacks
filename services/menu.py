@@ -19,7 +19,7 @@ def w():
 
 
 def l():
-    os.system('xterm -geometry 80x24+0+0 -e "sudo python 4WayHandshake.py"')
+    os.system('xterm -geometry 80x24+0+0 -e "sudo python monitoringAccess.py"')
 
 
 def d():
@@ -84,6 +84,7 @@ while number != '0':
     data += ' [1] Configuration environment\n'
     data += ' [2] Scan network (Crtl-C to stop scan)\n'
     data += ' [3] Select target by BSSID\n'
+    data += ' [D] Monitoring of access point\n'
     data += ' [4] Capture des paquets du BSSID\n'
     data += ' [5] 4 Way handshake\n'
     data += ' [6] Attaque Brute force\n'
@@ -104,13 +105,18 @@ while number != '0':
         print("\033[H\033[J", end="")
         data = ""
     elif number == '2':
-        print("\n Scan réseau ...\n")
+        print("\n Scan network ...\n")
         threading.Thread(target=b).start()
         clear()
         data = ""
     elif number == '3':
         print("\n Select target by BSSID ...\n")
         threading.Thread(target=o).start()
+        clear()
+        data = ""
+    elif number == 'D':
+        print("\n Monitoring of access point ...\n")
+        threading.Thread(target=l).start()
         clear()
         data = ""
     elif number == '4':
