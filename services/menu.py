@@ -88,7 +88,6 @@ while number != '0':
     elif os.name != "nt":
         data = (' ----------------------------\n')
         data += ' Hi ' + platform.uname()[1] + '\n'
-
     data += ' ----------------------------\n'
     data += ' Select option:\n'
     data += ' [1] Configuration environment\n'
