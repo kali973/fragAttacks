@@ -114,7 +114,7 @@ while number != '0':
         print("\033[H\033[J", end="")
         data = ""
     elif number == '2':
-        print("\n Scan network ( faire Ctrl C for stop scanning network) ...\n")
+        print("\n Scan network ( Press Ctrl+C to stop scanning the network ) ...\n")
         b_thread = threading.Thread(target=b)
         b_thread.start()  # Start the first thread
         b_thread.join()  # Wait for the first thread to finish before proceeding
