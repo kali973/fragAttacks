@@ -1,1 +1,45 @@
-{"_default": {"1": {"Network": "2", "NetType": "infrastructure", "ESSID": "Devolo_Wireless", "BSSID": "B8:BE:F4:46:1E:DE", "Info": "", "Channel": "1", "Cloaked": "No", "Encryption": "WPA2,AES-CCM,TKIP", "Decrypted": "No", "MaxRate": "270.0", "MaxSeenRate": "0", "Beacon": "11", "LLC": "0", "Data": "1", "Crypt": "0", "Weak": "0", "Total": "1", "Carrier": "", "Encoding": "", "FirstTime": "Mon Jun 19 20:07:54 2023", "LastTime": "Mon Jun 19 20:07:58 2023", "BestQuality": "-48", "BestSignal": "0", "BestNoise": "0", "GPSMinLat": "0.000000", "GPSMinLon": "0.000000", "GPSMinAlt": "0.000000", "GPSMinSpd": "0.000000", "GPSMaxLat": "0.000000", "GPSMaxLon": "0.000000", "GPSMaxAlt": "0.000000", "GPSMaxSpd": "0.000000", "GPSBestLat": "0.000000", "GPSBestLon": "0.000000", "GPSBestAlt": "0.000000", "DataSize": "0", "IPType": "0", "IP": "0.0.0.0", "": ""}}}
+{
+  "_default": {
+    "1": {
+      "Network": "2",
+      "NetType": "infrastructure",
+      "ESSID": "Devolo_Wireless",
+      "BSSID": "B8:BE:F4:46:1E:DE",
+      "Info": "",
+      "Channel": "1",
+      "Cloaked": "No",
+      "Encryption": "WPA2,AES-CCM,TKIP",
+      "Decrypted": "No",
+      "MaxRate": "270.0",
+      "MaxSeenRate": "0",
+      "Beacon": "11",
+      "LLC": "0",
+      "Data": "1",
+      "Crypt": "0",
+      "Weak": "0",
+      "Total": "1",
+      "Carrier": "",
+      "Encoding": "",
+      "FirstTime": "Mon Jun 19 20:07:54 2023",
+      "LastTime": "Mon Jun 19 20:07:58 2023",
+      "BestQuality": "-48",
+      "BestSignal": "0",
+      "BestNoise": "0",
+      "GPSMinLat": "0.000000",
+      "GPSMinLon": "0.000000",
+      "GPSMinAlt": "0.000000",
+      "GPSMinSpd": "0.000000",
+      "GPSMaxLat": "0.000000",
+      "GPSMaxLon": "0.000000",
+      "GPSMaxAlt": "0.000000",
+      "GPSMaxSpd": "0.000000",
+      "GPSBestLat": "0.000000",
+      "GPSBestLon": "0.000000",
+      "GPSBestAlt": "0.000000",
+      "DataSize": "0",
+      "IPType": "0",
+      "IP": "0.0.0.0",
+      "": ""
+    }
+  }
+}

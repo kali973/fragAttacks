@@ -1,16 +1,17 @@
 import os
 import subprocess
 
+
 def lancer_aircrack_ng(nom_fichier_cap, nom_fichier_wordlist):
     command_aircrack = ['aircrack-ng', nom_fichier_cap, '-w', nom_fichier_wordlist]
     subprocess.call(command_aircrack)
+
 
 # Fichier .cap à utiliser
 nom_fichier_cap = '4way-01.cap'
 
 # Fichier wordlist à utiliser
 nom_fichier_wordlist = 'rockyou.txt'
-
 
 n = 1  # Nombre de niveaux à remonter à partir du répertoire courant
 

@@ -3,10 +3,12 @@ import os
 import subprocess
 from multiprocessing import Process
 
+
 def lancer_airodump_ng(bssid):
     directory = os.getcwd()
     command_airodump = ['airodump-ng', 'wlan0', '-d', bssid]
     subprocess.call(command_airodump)
+
 
 # Chemin du fichier selection.json
 selection_file = 'selection.json'
